@@ -40,7 +40,8 @@ function GulpApply(fn) {
 			return;
 		}
 
-		file = fn.call(this, file);
+		// https://stackoverflow.com/a/27760489
+		file = await Promise.resolve(fn.call(this, file));
 
 		if (file) {
 			callback(null, file);
