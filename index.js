@@ -2,10 +2,12 @@
 
 const through = require('through2');
 const PluginError = require('plugin-error');
-const File = require('vinyl'); // eslint-disable-line no-unused-vars
 
 const PLUGIN_NAME = 'gulp-apply';
 
+/**
+ * @typedef {import('vinyl').BufferFile} File
+ */
 /**
  *
  * @callback ApplyCallback

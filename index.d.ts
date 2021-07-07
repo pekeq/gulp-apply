@@ -1,5 +1,8 @@
 export = GulpApply;
 /**
+ * @typedef {import('vinyl').BufferFile} File
+ */
+/**
  *
  * @callback ApplyCallback
  * @param {File} file
@@ -12,7 +15,7 @@ export = GulpApply;
  */
 declare function GulpApply(fn: ApplyCallback): NodeJS.ReadWriteStream;
 declare namespace GulpApply {
-    export { ApplyCallback };
+    export { File, ApplyCallback };
 }
 type ApplyCallback = (file: File) => (File | undefined);
-import File = require("vinyl");
+type File = import('vinyl').BufferFile;
